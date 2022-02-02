@@ -9,6 +9,13 @@ namespace HomeWork
 {
     class Program
     {
+        public class TestCaseLesson1Task1
+        {
+            public long Num { get; set; }
+            public bool Ret { get; set; }
+            public bool Expected { get; set; }
+            public Exception  ExpectedException { get; set; }
+        }
         /// <summary>
         /// Вычисляет является ли число, переданное в параметре, простым
         /// </summary>
@@ -70,7 +77,7 @@ namespace HomeWork
                 Console.Write($"{ fibonachi}, ");
             }
             //Console.ReadKey();
-
+             
 
 
         }
