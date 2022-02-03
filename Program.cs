@@ -9,13 +9,14 @@ namespace HomeWork
 {
     class Program
     {
-        public class TestCaseLesson1Task1
+  /*      public class TestCaseLesson1Task1
         {
             public long Num { get; set; }
             public bool Ret { get; set; }
             public bool Expected { get; set; }
             public Exception  ExpectedException { get; set; }
         }
+  */
         /// <summary>
         /// Вычисляет является ли число, переданное в параметре, простым
         /// </summary>
@@ -46,16 +47,12 @@ namespace HomeWork
         /// <returns>Последний член ряда</returns>
         static long CalculateFibonachi(int number, out long[] FibArray)
         {
-            if (number == 0)
+            if (number == 0 || number == 1)
             {
-                FibArray = new long[0];
-                return 0;
+                FibArray = new long[number];
+                return number;
             }
-            if(number == 1)
-            {
-                FibArray = new long[1];
-                return 1;
-            }
+           
             FibArray = new long[number];
             FibArray[0] = 0;
             FibArray[1] = 1;
@@ -65,7 +62,23 @@ namespace HomeWork
             }
             return FibArray[number - 1];
         }
+static long CalculateFibonachiRecursion(long num, ref long[] FibArray)
+{
 
+    if (num == 0)
+    {
+           FibArray[0] = 0;
+           return 0;
+    }
+    if (num == 1)
+    {
+           FibArray[0] = 0;
+           FibArray[1] = 1;
+     return 1;
+    }
+    FibArray[num-1] = CalculateFibonachiRecursion(num - 1, ref FibArray) + CalculateFibonachiRecursion(num - 2, ref FibArray);
+    return FibArray[num-1];
+}
         static void Main(string[] args)
         {
             Console.WriteLine("Введите число ряда Фибоначчи.");
@@ -76,8 +89,15 @@ namespace HomeWork
             {
                 Console.Write($"{ fibonachi}, ");
             }
+            Array.Clear(MyFib, 0, MyFib.Length);
+            System.Console.WriteLine("Рекурсивное вычисление:");
+            LastFib = CalculateFibonachiRecursion(number,ref MyFib);
+            foreach (long fibonachi in MyFib)
+            {
+                Console.Write($"{ fibonachi}, ");
+            }
             //Console.ReadKey();
-             
+
 
 
         }
