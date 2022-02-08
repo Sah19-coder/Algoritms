@@ -70,7 +70,7 @@ namespace HomeWork
         {
             Fibonacci_Rec_Temp(0, 1, 1, num, ref myFib);
         }
-        static void Main(string[] args)
+        static void Main(string[] args, Console Console)
         {
             Console.WriteLine("Введите число ряда Фибоначчи.");
             int number = int.Parse(Console.ReadLine());
