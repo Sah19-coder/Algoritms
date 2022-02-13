@@ -8,8 +8,8 @@ namespace Algorims
 {
     public interface ILesson
     {
-        public string Name { get => Name; set => Name = value; }
-        public int Id { get => Id; set => Id = value; }
+        public string Name { get => Name; }
+        public int Id { get => Id; }
         public bool DoTest();
     }
 }

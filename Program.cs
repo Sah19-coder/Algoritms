@@ -73,7 +73,7 @@ namespace HomeWork
         static void Main(string[] args, Console Console)
         {
             Console.WriteLine("Введите число ряда Фибоначчи.");
-            int number = int.Parse(Console.ReadLine());
+            int number = int.Parse( Console.ReadLine());
             long[] MyFib = Array.Empty<long>();
             long LastFib = CalculateFibonachi(number, out MyFib);
             foreach (long fibonachi in MyFib)
